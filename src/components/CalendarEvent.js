@@ -38,7 +38,7 @@ class CalendarEvent extends Component {
                         {item.summary}
                     </Card.Header>
                     <Card.Meta>
-                        <Icon name="calendar"/> <time>{item.start.date}</time>
+                        <Icon name="calendar"/> <time>{item.start.date || item.start.dateTime}</time>
                     </Card.Meta>
                     <Card.Description>
                         {this.getExcerpt(item.description, 100)}

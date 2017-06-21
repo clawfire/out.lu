@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react';
 
 const EventList = ({list}) => (
     <Card.Group>
-    { list.items.reverse().map(item =>
+    { list.items.map(item =>
         <CalendarEvent item={item} key={item.id} />
     )}
     </Card.Group>

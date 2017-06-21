@@ -16,7 +16,8 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/c5hjb2jkko0ksagbip0m2sl9ho@group.calendar.google.com/events?key=AIzaSyCT92FlCBpFHB85LSvtjzUBtRYvkKMSMpk');
+      const today = new Date().toISOString();
+      const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/c5hjb2jkko0ksagbip0m2sl9ho@group.calendar.google.com/events?key=AIzaSyCT92FlCBpFHB85LSvtjzUBtRYvkKMSMpk&singleEvents=true&orderBy=startTime&timeMin='+today);
       const eventList = await response.json();
       this.setState(() => ({eventList}));
     } catch (error) {
